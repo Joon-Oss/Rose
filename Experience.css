@@ -1,0 +1,320 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(243, 80, 167, 0.3);
+}
+
+header {
+    background-color: rgba(226, 196, 220, 0.3);
+    color: #000000;
+    padding: 10px;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.home-icon {
+    font-size: 30px; /* Adjust the size of the icon */
+    color: #000000; /* Icon color */
+    margin: 0 10px; /* Spacing around the icon */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+}
+
+.home-icon a {
+    color: inherit; /* Inherit color from .home-icon */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.home-icon a:hover {
+    color: blue;
+}
+
+.home-icon i {
+    font-size: inherit; /* Ensure icon size is consistent with .home-icon */
+}
+
+
+.header-heading {
+    flex: 1;
+    text-align: center;
+    font-size: 25px;
+}
+
+.header-heading:hover {
+    color: blue;
+}
+
+.hamburger-menu {
+    position: relative;
+}
+
+.hamburger-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+.hamburger-button:hover {
+    color: blue;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 250px; /* Adjust width as needed */
+    background-color: #000000; /* Darker background for better visibility */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    z-index: 1000;
+    padding: 50px; /* Padding around the menu items */
+    box-sizing: border-box;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 15px; /* Increased padding for better spacing */
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #f50977; /* Divider between menu items */
+}
+
+.dropdown-menu a:hover {
+    background-color: #7971c0;
+}
+
+.hamburger-button:focus + .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
+
+.close-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #f50977;
+    cursor: pointer;
+    position: absolute;
+    top: 15px; /* Adjusted to add more space */
+    right: 15px; /* Adjusted to add more space */
+}
+
+
+p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.experience-section {
+    padding: 20px;
+    background-color: #b69cb1;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background-color: #e2bedd;
+    box-shadow: 0 8px 16px rgba(43, 248, 2, 0.2);
+    border-radius: 10px;
+    width: calc(33.333% - 20px); /* 3 cards per row */
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.experience-card:nth-child(2n) {
+    animation-delay: 0.2s;
+}
+
+.experience-card:nth-child(3n) {
+    animation-delay: 0.4s;
+}
+
+.experience-title {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 10px;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.experience-description {
+    font-size: 16px;
+    color: #000000;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(20, 3, 175, 0.863);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .experience-card {
+        width: calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .experience-card {
+        width: 100%; /* 1 card per row */
+    }
+}
+
+.testimonials-section {
+    padding: 20px;
+    background-color: #ca84b9;
+    text-align: center;
+}
+
+.section-test {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #c0a9eb;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: calc(33.333% - 20px); /* 3 cards per row */
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-image {
+    margin-bottom: 15px;
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    object-fit: cover;
+    border: 3px solid #ddd; /* Optional: border around image */
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.testimonial-author {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .testimonial-card {
+        width: calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonial-card {
+        width: 100%; /* 1 card per row */
+    }
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(240, 167, 206, 0.3);
+}
+
+.home-sci {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 15px; /* Space between icons */
+    position: relative;
+}
+
+.home-sci a {
+    text-decoration: none;
+    color: #000; /* Default icon color */
+    font-size: 25px; /* Adjust icon size */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.home-sci a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Separate styling for the chevron-up icon */
+.home-sci a:last-child {
+    position: absolute;
+    right: 0; /* Align to the far right */
+    font-size: 25px; /* Optionally make it bigger */
+}

@@ -1,0 +1,231 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(85, 141, 247);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styling */
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between items */
+    background-color: rgb(85, 141, 247); /* Adjust as needed */
+    padding: 10px;
+    color: #000000;
+}
+
+.header .heading-container {
+    flex: 1; /* Allows the heading to take up available space */
+    display: flex;
+    justify-content: center; /* Center the heading */
+}
+
+.heading {
+    margin: 0;
+    font-size: 24px; /* Adjust font size as needed */
+    text-align: center;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px; /* Size for menu button */
+    cursor: pointer;
+    margin-left: auto; /* Push menu button to the right */
+    padding-right: 20px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 55px; /* Adjust based on header height */
+    right: 10px; /* Adjust to align with menu button */
+    background-color: #000000;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-top: 30px;
+    padding-right: 10px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown-menu a:hover {
+    background-color: #e908b8;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #0ef3d4;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.header i {
+    font-size: 30px; /* Size for home icon */
+    color: #fff;
+}
+
+.header i:hover {
+    color: #000000;
+}
+
+.heading:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    color: #fff; /* Highlight color on hover */
+}
+
+.dropdown-menu a,
+.close-btn {
+    margin: 0;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.home-sci {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 15px; /* Space between icons */
+    position: relative;
+}
+
+.home-sci a {
+    text-decoration: none;
+    color: #000; /* Default icon color */
+    font-size: 35px; /* Adjust icon size */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.home-sci a:hover {
+    color: #06e7f7; /* Change color on hover */
+}
+
+/* Separate styling for the chevron-up icon */
+.home-sci a:last-child {
+    position: absolute;
+    right: 0; /* Align to the far right */
+    font-size: 35px; /* Optionally make it bigger */
+}
+
+.skills-section {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to right, #1c92d2, #9cc8d1, #1c92d2);
+    color: #333;
+}
+
+.skills-section h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skill-card {
+    background-color: #0ee7f7;
+    width: 250px;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #1c92d2;
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column; /* Stack skill cards vertically */
+        align-items: center; /* Center align skill cards */
+    }
+
+    .skill-card {
+        width: 90%; /* Adjust card width for smaller screens */
+        margin-bottom: 20px; /* Space between cards */
+    }
+
+    /* Keep the bottom section as is */
+}
+
+@media (max-width: 480px) {
+    .skills-section h1 {
+        font-size: 2rem;
+    }
+
+    .skill-card {
+        width: 90%;
+    }
+}

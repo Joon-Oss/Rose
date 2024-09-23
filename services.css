@@ -1,0 +1,244 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    background-color: bisque;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: bisque; /* Background color for the header */
+    padding: 10px 20px;
+    color: #000000;
+    position: relative; /* Enable positioning for dropdown */
+}
+.header i {
+  color: #000000;
+  font-size: 2rem;
+}
+
+.heading {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 0;
+    background-color: #000000; /* Background for the dropdown */
+    border: 1px solid cyan; /* Border for the dropdown */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure dropdown is on top */
+}
+
+.dropdown a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px; /* Increased padding for better click area */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.dropdown a:hover {
+    background-color: #15c6dd; /* Highlight on hover */
+}
+
+#close-icon {
+    cursor: pointer;
+    margin-bottom: 10px; /* Space between close icon and dropdown items */
+    color: cyan; /* Close icon color */
+}
+
+#menu-icon {
+    cursor: pointer;
+    color: #000000; /* Menu icon color */
+    font-size: 2rem;
+}
+
+
+  .services-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .services-container .service-box {
+    position: relative; /* Make the service-box the parent of the modal */
+    flex: 1 1 20rem;
+    background: rgb(241, 202, 150);
+    padding: 3rem 2rem 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .1.5rem solid aqua;
+    transition: .5s ease;
+}
+
+
+  .services-container .service-box:hover {
+    border-color: deeppink;
+    background-color:ivory;
+    transform: scale(1.02);
+  }
+
+  .service-box i {
+    font-size: 2.5rem;
+    color: darkmagenta;
+  }
+
+  .service-box i:hover {
+    color: rgb(102, 47, 255);
+  }
+
+  .service-box h3 {
+    font-size: 2rem;
+  }
+
+  .service-box p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+  }
+
+  .btn {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000000; /* Button text color */
+    background-color: #007bff; /* Initial button background color */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Font weight */
+    text-align: center; /* Center text */
+    overflow: hidden; /* Hide overflow */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+    z-index: 1; /* Ensure button text is above the pseudo-element */
+  }
+  
+  .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #09c6f5; /* Color to reveal on hover */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: center;
+    transition: transform 0.3s ease; /* Smooth transition */
+    z-index: -1; /* Place behind text */
+  }
+  
+  .btn:hover::after {
+    transform: scaleX(1); /* Expand on hover */
+  }
+  
+  .btn:hover {
+    color: #000000; /* Ensure text color stays readable */
+  }
+
+
+
+/* Modal container - hidden by default */
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position relative to service-box */
+  top: 50%; /* Center it within the box */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure it's on top of the content within the service box */
+  width: 100%;
+  height: auto;
+  background-color: #000000; /* Slightly transparent white background */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Modal content */
+.modal-content {
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: chartreuse;
+}
+
+/* Close button */
+.close {
+  position: absolute; /* Position relative to modal content */
+  top: 10px;
+  right: 20px;
+  color: cyan;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-sci {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 15px; /* Space between icons */
+    position: relative;
+}
+
+.home-sci a {
+    text-decoration: none;
+    color: #000; /* Default icon color */
+    font-size: 35px; /* Adjust icon size */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.home-sci a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Separate styling for the chevron-up icon */
+.home-sci a:last-child {
+    position: absolute;
+    right: 0; /* Align to the far right */
+    font-size: 35px; /* Optionally make it bigger */
+}
+
+
+ 
